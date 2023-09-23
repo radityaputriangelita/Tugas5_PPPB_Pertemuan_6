@@ -13,6 +13,11 @@
         android:layout_width="400dp"
         android:layout_height="195dp"
         android:src="@drawable/circle_blue" />
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="230dp"
+        android:src="@drawable/logo"
+        android:layout_centerHorizontal="true"/>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -181,7 +186,7 @@
                         android:id="@+id/Passanger"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Passanger">
+                        android:text="Jumlah Tiket">
                     </TextView>
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="120dp"
@@ -195,7 +200,8 @@
                 android:layout_below="@id/seat_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Order"/>
+                android:text="Order"
+                android:backgroundTint="@color/blue"/>
         </RelativeLayout>
 
 

@@ -11,4 +11,10 @@
         <item>China</item>
         <item>Canada</item>
     </array>
+    <array name="ClassSeat">
+        <item>Ekonomi</item>
+        <item>Ekonomi Premium</item>
+        <item>Bisnis</item>
+        <item>First Class</item>
+    </array>
 </resources>

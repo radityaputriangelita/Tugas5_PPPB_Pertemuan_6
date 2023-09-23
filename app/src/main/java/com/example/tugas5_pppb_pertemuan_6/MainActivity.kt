@@ -19,18 +19,18 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val country = resources.getStringArray(R.array.country)
+        val ClassSeat = resources.getStringArray(R.array.ClassSeat)
+
         with(binding){
-            //dropdown
+
             val countryAdaptor = ArrayAdapter(
                 this@MainActivity,androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,country
             )
             countryAdaptor.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             spinFrom.adapter = countryAdaptor
-
             countryAdaptor.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             spinTo.adapter = countryAdaptor
 
-            //button click show date picker
             buttonTgl.setOnClickListener{
                 val c = Calendar.getInstance()
                 val year = c.get(Calendar.YEAR)
@@ -50,15 +50,20 @@ class MainActivity : AppCompatActivity() {
                 val timePickerDialog = TimePickerDialog(
                     this@MainActivity,
                     TimePickerDialog.OnTimeSetListener { _, selectedHour, selectedMinute ->
-                        // Update the text view with the selected time
                         time.text = String.format("%02d:%02d", selectedHour, selectedMinute)
                     },
                     hour,
                     minute,
-                    false// set true if you want 24-hour format
+                    false
                 )
                 timePickerDialog.show()
             }
+            val ClassSeatAdaptor = ArrayAdapter(
+                this@MainActivity,androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,ClassSeat
+            )
+            ClassSeatAdaptor.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            spinSeat.adapter = ClassSeatAdaptor
+
             btnOrder.setOnClickListener{
                 Toast.makeText(this@MainActivity, "Tiket " + mdy.text +" "+ time.text + " Berhasil Dipesan", Toast.LENGTH_SHORT).show()
             }
